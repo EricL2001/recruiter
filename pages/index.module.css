@@ -32,7 +32,7 @@
   width: 44px;
 }
 .main h3 {
-  font-size: 32px;
+  font-size: 28px;
   line-height: 40px;
   font-weight: bold;
   color: #202123;
@@ -114,4 +114,11 @@
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #eb3735; }
+}
+
+/* If the screen size is 375px wide or less, set max width */
+@media only screen and (max-width: 500px) {
+  .main .result {
+    width: 350px;
+  }
 }
