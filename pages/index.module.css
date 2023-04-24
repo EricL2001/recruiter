@@ -62,9 +62,9 @@ color: white;
   border-right: .10em solid #ffff; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   animation: 
-    typing 2.5s steps(40, end),
+    typing 3s steps(40, end),
     blink-caret .75s step-end infinite;
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 .main form {
