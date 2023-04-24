@@ -21,14 +21,16 @@ export default function Home() {
     }
     setLoading(true);
 
+
     try {
-      const response = await fetch("/api/generate-gifts", {
+      const response = await fetch("/api/generate-response", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ priceMin, priceMax, gender, age, hobbies }),
       });
+
 
       const data = await response.json();
       if (response.status !== 200) {
@@ -50,13 +52,13 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Generate Xmas Gifts</title>
+        <title>Recruiting Assistant</title>
         <link rel="icon" href="/santa-claus.png" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/santa-claus.png" className={styles.icon} />
-        <h3>Christmas Gift Generator</h3>
+        <img src="/recruitment.png" className={styles.icon} />
+        <h3>Recruiting Assistant</h3>
           <div className={styles.typewriter}>
             <p className={styles.ai}>Powered by OpenAI</p>
           </div>
@@ -103,7 +105,7 @@ export default function Home() {
             onChange={(e) => setPriceMax(Number.parseInt(e.target.value))}
           />
 
-          <label>Hobbies or Interests</label>
+          <label>Interests or Hobbies</label>
           <input
             type="text"
             name="hobbies"
@@ -111,12 +113,12 @@ export default function Home() {
             value={hobbies}
             onChange={(e) => setHobbies(e.target.value)}
           />
-          <input type="submit" value="Generate Gift Ideas" />
+          <input type="submit" value="Generate Questions" />
         </form>
 
         {loading && (
           <div>
-            <h4>...searching for the best gift ideas 🎁</h4>
+            <h4>...generating candidate questions 🎁</h4>
           </div>
         )}
         <div

@@ -1,3 +1,3 @@
-import Gifts from "./gifts";
+import Recruiter from "./recruiter";
 
-export default Gifts;
+export default Recruiter;
