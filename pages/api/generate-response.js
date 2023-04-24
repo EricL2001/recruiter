@@ -9,7 +9,7 @@ export default async function (req, res) {
   const{years, title} = req.body;
   const prompt = generatePrompt(years, title);
 
-  //console.log(prompt);
+  console.log(prompt);
 
   if (!configuration.apiKey) {
     res.status(500).json({
@@ -49,5 +49,5 @@ export default async function (req, res) {
 
 function generatePrompt(years, title) {
   
- return `You're a recruiting assistant that will help me generate some screening questions for a potential job hire.  I have a ${title} with ${years} experience.Please provide 10 questions for the candidate to answer to determine their competency.`;
+ return `I need help generating some screening questions for a ${title} with ${years} experience. Please provide 10 questions for the candidate to answer to determine their competency.`;
 }

@@ -1,3 +1,8 @@
 html {
-    background-color: #dceefe;
+    background: radial-gradient(circle at top, #85b6b7 , #732a73);
+    background-size: cover;
 }
+
+html, body {
+    height: 100%;
+  }

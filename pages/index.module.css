@@ -19,7 +19,7 @@
 .main input {
   font-size: 16px;
   line-height: 24px;
-  color: #353740;
+  color:black;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
 .main {
@@ -39,7 +39,15 @@
   margin: 10px 0 -18px;
   
 }
+
+.main h4{
+color: white;
+
+}
+
+
 .main label {
+  color: #ffff;
   font-weight: bold;
   margin-top: -2px;
 }
@@ -47,11 +55,11 @@
 .ai {
   margin-bottom: 36px;
   font-family: system-ui;
-  color: #eb3735;
+  color: #ffff;
   font-size: 14px;
   letter-spacing: .10em;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .10em solid #10a37f; /* The typwriter cursor */
+  border-right: .10em solid #ffff; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   animation: 
     typing 2.5s steps(40, end),
@@ -68,31 +76,34 @@
 .main input[type="number"], 
 .main select {
   padding: 12px 16px;
-  border: 1px solid #10a37f;
+  border: 0.5px solid #9dc45c;
   border-radius: 4px;
   margin-bottom: 18px;
   margin-top: 4px;
-  outline-color: #10a37f;
+  outline-color: #9dc45c;
+  opacity: 0.4;
+  
 }
 
 .main ::placeholder {
   font-size: 14px;
-  color: #8e8ea0;
+  color: black;
   opacity: 1;
 }
 .main input[type="submit"] {
   padding: 12px 0;
   color: #fff;
-  background-color: #10a37f;
+  background-color: #9dc45c;
   border: none;
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
+  margin-top: 4px;
 }
 .main input[type="submit"]:hover {
-  color: #10a37f;
+  color: #9dc45c;
   background-color: #fff;
-  border: 1px solid #10a37f;
+  border: 1px solid #9dc45c;
   cursor: pointer;
 }
 
@@ -101,6 +112,7 @@
 }
 
 .main .result {
+  color: white;
   font-weight: bold;
   margin-top: 40px;
   width: 500px;
@@ -115,7 +127,7 @@
 /* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to { border-color: transparent }
-  50% { border-color: #eb3735; }
+  50% { border-color: #ffff; }
 }
 
 /* If the screen size is 375px wide or less, set max width */
