@@ -105,6 +105,7 @@ color: white;
   background-color: #fff;
   border: 1px solid #9dc45c;
   cursor: pointer;
+  border: none;
 }
 
 .main .loading {
