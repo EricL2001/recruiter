@@ -2,6 +2,7 @@ import React from 'react';
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
+import Footer from "./footer";
 
 export default function Home() {
   const [years, setYears] = useState();
@@ -90,11 +91,12 @@ export default function Home() {
             <h4>...generating candidate questions</h4>
           </div>
         )}
-        <div
-          className={styles.result}
-          dangerouslySetInnerHTML={{ __html: result }}
+       <div
+        className={styles.result}
+        dangerouslySetInnerHTML={{ __html: result }}
         />
       </main>
+      <Footer/>
     </div>
   );
 }

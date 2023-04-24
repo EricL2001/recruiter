@@ -6,3 +6,14 @@ html {
 html, body {
     height: 100%;
   }
+
+footer {
+    color: white;
+    font-family: "ColfaxAI";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: .05em;
+    padding-top: 36px;
+}

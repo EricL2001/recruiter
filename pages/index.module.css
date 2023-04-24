@@ -98,7 +98,7 @@ color: white;
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 .main input[type="submit"]:hover {
   color: #9dc45c;
