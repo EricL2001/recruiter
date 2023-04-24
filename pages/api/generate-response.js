@@ -6,8 +6,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
-  const{priceMin, priceMax, gender, age, hobbies} = req.body;
-  const prompt = generatePrompt(priceMin, priceMax, gender, age, hobbies);
+  const{years, title} = req.body;
+  const prompt = generatePrompt(years, title);
 
   //console.log(prompt);
 
@@ -47,8 +47,7 @@ export default async function (req, res) {
   }
 }
 
-function generatePrompt(priceMin, priceMax, gender, age, hobbies) {
+function generatePrompt(years, title) {
   
- return `Suggest 3 Christmas gift ideas between ${priceMin}$ and ${priceMax}$ for a ${age} ${gender} that is into ${hobbies}.`;
- 
+ return `You're a recruiting assistant that will help me generate some screening questions for a potential job hire.  I have a ${title} with ${years} experience.Please provide 10 questions for the candidate to answer to determine their competency.`;
 }

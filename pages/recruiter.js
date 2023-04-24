@@ -4,11 +4,8 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [gender, setGender] = useState('Man');
-  const [age, setAge] = useState();
-  const [priceMin, setPriceMin] = useState();
-  const [priceMax, setPriceMax] = useState();
-  const [hobbies, setHobbies] = useState("");
+  const [years, setYears] = useState();
+  const [title, setTitle] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState();
@@ -28,7 +25,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ priceMin, priceMax, gender, age, hobbies }),
+        body: JSON.stringify({ years, title }),
       });
 
 
@@ -53,7 +50,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Recruiting Assistant</title>
-        <link rel="icon" href="/santa-claus.png" />
+        <link rel="icon" href="/recruitment.png" />
       </Head>
 
       <main className={styles.main}>
@@ -64,61 +61,33 @@ export default function Home() {
           </div>
 
         <form onSubmit={onSubmit}>
-          <label className={styles.label}>Who is the gift for?</label>
-          <select
-            name="gender"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-          >
-            <option value="man">Man</option>
-            <option value="woman">Woman</option>
-          </select>
+        <label>Job Title</label>
+          <input
+            type="text"
+            name="title"
+            placeholder="Enter job title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-          <label>Age</label>
+          <label>Years In Industry</label>
           <input
             type="number"
             min={1}
             max={99}
-            name="age"
-            placeholder="Enter the age"
-            value={age}
-            onChange={(e) => setAge(Number.parseInt(e.target.value))}
+            name="years"
+            placeholder="Enter the years in industry"
+            value={years}
+            onChange={(e) => setYears(Number.parseInt(e.target.value))}
           />
 
-          <label>Minimum Price</label>
-          <input
-            type="number"
-            min={1}
-            name="priceMin"
-            placeholder="Set minimum price"
-            value={priceMin}
-            onChange={(e) => setPriceMin(Number.parseInt(e.target.value))}
-          />
-
-          <label>Maximum Price</label>
-          <input
-            type="number"
-            max={10000}
-            name="priceMax"
-            placeholder="Set maximum price"
-            value={priceMax}
-            onChange={(e) => setPriceMax(Number.parseInt(e.target.value))}
-          />
-
-          <label>Interests or Hobbies</label>
-          <input
-            type="text"
-            name="hobbies"
-            placeholder="Enter each seperated by comma"
-            value={hobbies}
-            onChange={(e) => setHobbies(e.target.value)}
-          />
           <input type="submit" value="Generate Questions" />
+
         </form>
 
         {loading && (
           <div>
-            <h4>...generating candidate questions 🎁</h4>
+            <h4>...generating candidate questions</h4>
           </div>
         )}
         <div
