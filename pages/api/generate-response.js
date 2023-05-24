@@ -9,7 +9,7 @@ export default async function (req, res) {
   const{years, title} = req.body;
   const prompt = generatePrompt(years, title);
 
-  console.log(prompt);
+  console.log(prompt); // Log the prompt
 
   if (!configuration.apiKey) {
     res.status(500).json({
@@ -19,7 +19,7 @@ export default async function (req, res) {
     });
 
     return;
-    
+
   }
 
 
@@ -31,10 +31,14 @@ export default async function (req, res) {
       max_tokens: 2048,
     });
 
+    console.log("Response:", completion.data); // Log the response
+
+
     res.status(200).json({ result: completion.data.choices[0].text });
     
   } catch(error) {
-    // Consider adjusting the error handling logic for your use case
+    // Log the error
+    console.error("Error:", error);
     if (error.response) {
       console.error(error.response.status, error.response.data);
       res.status(error.response.status).json(error.response.data);
