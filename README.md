@@ -9,4 +9,9 @@ This app the utilizes the [OpenAI API](https://beta.openai.com/docs/quickstart) 
 - App will return 10 questions for a potential job candidate to determine competency level
 - OpenAI API details:
      - model: text-davinci-003
+<<<<<<< HEAD
      - temperature: 0.7
+=======
+     - temperature: 0.7
+
+>>>>>>> ad81d909a8939de82fd14df140326980a38d0d8a
