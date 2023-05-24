@@ -67,6 +67,11 @@ color: white;
     animation-delay: 3s;
 }
 
+.error {
+  padding-top: 15px;
+  color: red;
+}
+
 .main form {
   display: flex;
   flex-direction: column;

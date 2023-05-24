@@ -49,5 +49,5 @@ export default async function (req, res) {
 
 function generatePrompt(years, title) {
   
- return `I need help generating some screening questions for a ${title} with ${years} experience. Please provide 10 questions for the candidate to answer to determine their competency.`;
+ return `You're a helpful recruiting assistant.  Generate some screening questions for a ${title} with ${years} years of experience. Please provide 10 questions for the candidate to answer to determine their competency.  Return the questions in a numbered list.`;
 }

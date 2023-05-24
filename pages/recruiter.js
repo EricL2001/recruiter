@@ -10,6 +10,7 @@ export default function Home() {
 
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState();
+  const [error, setError] = useState(null); // Add error state
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -18,6 +19,15 @@ export default function Home() {
       return;
     }
     setLoading(true);
+
+    // Check if fields are blank
+    if (!years || !title) {
+      setError("Please complete both fields before submitting");
+      setLoading(false);
+      return;
+    }
+
+    setError(null); // Clear previous error
 
 
     try {
@@ -46,6 +56,7 @@ export default function Home() {
       alert(error.message);
     }
   }
+
 
   return (
     <div>
@@ -86,6 +97,8 @@ export default function Home() {
 
         </form>
 
+        {error && <div className={styles.error}>{error}</div>}
+    
         {loading && (
           <div>
             <h4>...generating candidate questions</h4>
