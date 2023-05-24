@@ -17,7 +17,9 @@ export default async function (req, res) {
         message: "OpenAI API key not configured, please follow instructions in README.md",
       }
     });
+
     return;
+    
   }
 
 
