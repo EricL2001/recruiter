@@ -45,6 +45,9 @@ export default function Home() {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
 
+      // set getReader() to progressively add date to our current state as it comes in.
+
+
       setResult(data.result);
 
       setLoading(false);
